@@ -1,0 +1,1 @@
+convert ui->py: pyuic6 -x main.ui -o new.py

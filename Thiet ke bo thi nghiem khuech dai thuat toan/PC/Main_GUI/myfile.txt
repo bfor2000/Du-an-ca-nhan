@@ -1,0 +1,3 @@
+VDK:,USB Serisl Device,c,d,
+MHS:,n,m,k,
+MPH:,j,k,l,

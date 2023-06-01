@@ -1,0 +1,626 @@
+CCS PCM C Compiler, Version 5.025, 13085               07-May-23 01:20
+
+               Filename:   C:\Users\Bfor\OneDrive\Desktop\thu_vien_c\74HC595\vidu_74HC595.lst
+
+               ROM used:   343 words (4%)
+                           Largest free fragment is 2048
+               RAM used:   18 (5%) at main() level
+                           37 (10%) worst case
+               Stack used: 2 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   0EB
+0003:  NOP
+.................... #include <16f877a.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+*
+001B:  MOVF   38,W
+001C:  CLRF   78
+001D:  SUBWF  37,W
+001E:  BTFSC  03.0
+001F:  GOTO   023
+0020:  MOVF   37,W
+0021:  MOVWF  77
+0022:  GOTO   02F
+0023:  CLRF   77
+0024:  MOVLW  08
+0025:  MOVWF  39
+0026:  RLF    37,F
+0027:  RLF    77,F
+0028:  MOVF   38,W
+0029:  SUBWF  77,W
+002A:  BTFSC  03.0
+002B:  MOVWF  77
+002C:  RLF    78,F
+002D:  DECFSZ 39,F
+002E:  GOTO   026
+002F:  RETURN
+0030:  MOVF   3C,W
+0031:  ANDLW  07
+0032:  MOVWF  77
+0033:  RRF    3C,W
+0034:  MOVWF  78
+0035:  RRF    78,F
+0036:  RRF    78,F
+0037:  MOVLW  1F
+0038:  ANDWF  78,F
+0039:  MOVF   78,W
+003A:  ADDWF  3E,W
+003B:  MOVWF  04
+003C:  BCF    03.7
+003D:  BTFSC  3F.0
+003E:  BSF    03.7
+003F:  CLRF   78
+0040:  INCF   78,F
+0041:  INCF   77,F
+0042:  GOTO   044
+0043:  RLF    78,F
+0044:  DECFSZ 77,F
+0045:  GOTO   043
+0046:  MOVF   3D,F
+0047:  BTFSC  03.2
+0048:  GOTO   04C
+0049:  MOVF   78,W
+004A:  IORWF  00,F
+004B:  GOTO   04F
+004C:  COMF   78,F
+004D:  MOVF   78,W
+004E:  ANDWF  00,F
+004F:  RETURN
+....................  
+.................... #list 
+....................  
+.................... #include <def_16f877a.h> 
+.................... // register definitions 
+.................... #define W 0 
+.................... #define F 1 
+....................  
+.................... // register files 
+.................... #byte INDF =0x00 
+.................... #byte TMR0 =0x01 
+.................... #byte PCL =0x02 
+.................... #byte STATUS =0x03 
+.................... #byte FSR =0x04 
+.................... //#device *=14 adc=8 
+.................... #byte PORTA =0x05 
+.................... #byte PORTB =0x06 
+.................... #byte PORTC =0x07 
+.................... #byte PORTD =0x08 
+.................... #byte PORTE =0x09 
+....................  
+.................... #byte EEDATA =0x10C 
+.................... #byte EEADR =0x10D 
+.................... #byte EEDATH =0x10E 
+.................... #byte EEADRH =0x10F 
+.................... #byte ADCON0 =0x1F 
+.................... #byte ADCON1 =0x9F 
+.................... #byte ADRESH =0x9F 
+.................... #byte ADSESL =0x9F 
+....................  
+.................... #byte PCLATH =0x0a 
+.................... #byte INTCON =0x0b 
+.................... #byte PIR1 =0x0c 
+.................... #byte PIR2 =0x0d 
+.................... #byte PIE1 =0x8c 
+.................... #byte PIE2 =0x8d 
+.................... #byte OPTION_REG =0x81 
+.................... #byte TRISA =0x85 
+.................... #byte TRISB =0x86 
+.................... #byte TRISC =0x87 
+.................... #byte TRISD =0x88 
+.................... #byte TRISE =0x89 
+....................  
+.................... #byte EECON1 =0x18C 
+.................... #byte EECON2 =0x18D 
+....................  
+.................... #byte SSPBUF =0x13 
+.................... #byte SSPCON =0x14 
+.................... #byte SSPCON2 =0x91 
+.................... #byte SSPADD =0x93 
+.................... #byte SSPSTAT =0x94 
+.................... // SSPCON bit 
+.................... #bit SSPWCOL = 0x14.7 
+.................... #bit SSPOV = 0x14.6 
+.................... #bit SSPEN = 0x14.5 
+.................... #bit SSPCKP = 0x14.4 
+.................... #bit SSPM3 = 0x14.3 
+.................... #bit SSPM2 = 0x14.2 
+.................... #bit SSPM1 = 0x14.1 
+.................... #bit SSPM0 = 0x14.0 
+.................... // SSPSTAT bit 
+.................... #bit SSPSMP = 0x94.7 
+.................... #bit SSPCKE = 0x94.6 
+.................... #bit SSPDA = 0x94.5 
+.................... #bit SSPP = 0x94.4 
+.................... #bit SSPS = 0x94.3 
+.................... #bit SSPRW = 0x94.2 
+.................... #bit SSPUA = 0x94.1 
+.................... #bit SSPBF = 0x94.0 
+....................  
+.................... // BIT DEFINITION 
+.................... #bit A7 =0x05.5 
+.................... #bit A6 =0x05.5 
+.................... #bit A5 =0x05.5 
+.................... #bit A4 =0x05.4 
+.................... #bit A3 =0x05.3 
+.................... #bit A2 =0x05.2 
+.................... #bit A1 =0x05.1 
+.................... #bit A0 =0x05.0 
+....................  
+.................... #bit B7 =0x06.7 
+.................... #bit B6 =0x06.6 
+.................... #bit B5 =0x06.5 
+.................... #bit B4 =0x06.4 
+.................... #bit B3 =0x06.3 
+.................... #bit B2 =0x06.2 
+.................... #bit B1 =0x06.1 
+.................... #bit B0 =0x06.0 
+....................  
+.................... #bit C7 =0x07.7 
+.................... #bit C6 =0x07.6 
+.................... #bit C5 =0x07.5 
+.................... #bit C4 =0x07.4 
+.................... #bit C3 =0x07.3 
+.................... #bit C2 =0x07.2 
+.................... #bit C1 =0x07.1 
+.................... #bit C0 =0x07.0 
+....................  
+.................... #bit D7 =0x08.7 
+.................... #bit D6 =0x08.6 
+.................... #bit D5 =0x08.5 
+.................... #bit D4 =0x08.4 
+.................... #bit D3 =0x08.3 
+.................... #bit D2 =0x08.2 
+.................... #bit D1 =0x08.1 
+.................... #bit D0 =0x08.0 
+.................... #bit E2 =0x09.2 
+.................... #bit E1 =0x09.1 
+.................... #bit E0 =0x09.0 
+....................  
+....................  
+.................... #bit trisa5 =0x85.5 
+.................... #bit trisa4 =0x85.4 
+.................... #bit trisa3 =0x85.3 
+.................... #bit trisa2 =0x85.2 
+.................... #bit trisa1 =0x85.1 
+.................... #bit trisa0 =0x85.0 
+....................  
+.................... #bit trisb7 =0x86.7 
+.................... #bit trisb6 =0x86.6 
+.................... #bit trisb5 =0x86.5 
+.................... #bit trisb4 =0x86.4 
+.................... #bit trisb3 =0x86.3 
+.................... #bit trisb2 =0x86.2 
+.................... #bit trisb1 =0x86.1 
+.................... #bit trisb0 =0x86.0 
+.................... #bit trisc7 =0x87.7 
+.................... #bit trisc6 =0x87.6 
+.................... #bit trisc5 =0x87.5 
+.................... #bit trisc4 =0x87.4 
+.................... #bit trisc3 =0x87.3 
+.................... #bit trisc2 =0x87.2 
+.................... #bit trisc1 =0x87.1 
+.................... #bit trisc0 =0x87.0 
+....................  
+.................... #bit trisd7 =0x88.7 
+.................... #bit trisd6 =0x88.6 
+.................... #bit trisd5 =0x88.5 
+.................... #bit trisd4 =0x88.4 
+.................... #bit trisd3 =0x88.3 
+.................... #bit trisd2 =0x88.2 
+.................... #bit trisd1 =0x88.1 
+.................... #bit trisd0 =0x88.0 
+....................  
+.................... #bit trise2 =0x89.2 
+.................... #bit trise1 =0x89.1 
+.................... #bit trise0 =0x89.0 
+....................  
+.................... // INTCON Bits for C 
+.................... #bit gie = 0x0b.7 
+.................... #bit peie = 0x0b.6 
+.................... #bit tmr0ie = 0x0b.5 
+.................... #bit int0ie = 0x0b.4 
+.................... #bit rbie = 0x0b.3 
+.................... #bit tmr0if = 0x0b.2 
+.................... #bit int0if = 0x0b.1 
+.................... #bit rbif = 0x0b.0 
+....................  
+.................... // PIR1 for C 
+.................... #bit pspif = 0x0c.7 
+.................... #bit adif = 0x0c.6 
+.................... #bit rcif = 0x0c.5 
+.................... #bit txif = 0x0c.4 
+.................... #bit sspif = 0x0c.3 
+.................... #bit ccp1if = 0x0c.2 
+.................... #bit tmr2if = 0x0c.1 
+.................... #bit tmr1if = 0x0c.0 
+.................... //PIR2 for C 
+.................... #bit cmif = 0x0d.6 
+.................... #bit eeif = 0x0d.4 
+.................... #bit bclif = 0x0d.3 
+.................... #bit ccp2if = 0x0d.0 
+.................... // PIE1 for C 
+.................... #bit adie = 0x8c.6 
+.................... #bit rcie = 0x8c.5 
+.................... #bit txie = 0x8c.4 
+.................... #bit sspie = 0x8c.3 
+.................... #bit ccp1ie = 0x8c.2 
+.................... #bit tmr2ie = 0x8c.1 
+.................... #bit tmr1ie = 0x8c.0 
+....................  
+.................... //PIE2 for C 
+.................... #bit osfie = 0x8d.7 
+.................... #bit cmie = 0x8d.6 
+.................... #bit eeie = 0x8d.4 
+....................  
+.................... // OPTION Bits 
+.................... #bit not_rbpu = 0x81.7 
+.................... #bit intedg = 0x81.6 
+.................... #bit t0cs = 0x81.5 
+.................... #bit t0se = 0x81.4 
+.................... #bit psa = 0x81.3 
+.................... #bit ps2 = 0x81.2 
+.................... #bit ps1 = 0x81.1 
+.................... #bit ps0 = 0x81.0 
+.................... // EECON1 Bits 
+.................... #bit eepgd = 0x18c.7 
+.................... #bit free = 0x18C.4 
+.................... #bit wrerr = 0x18C.3 
+.................... #bit wren = 0x18C.2 
+.................... #bit wr = 0x18C.1 
+.................... #bit rd = 0x18C.0 
+....................  
+.................... //ADCON0 
+.................... #bit CHS0 =0x1F.3 
+.................... #bit CHS1 =0x1F.4 
+.................... #bit CHS2 =0x1F.5 
+....................  
+.................... #use delay(clock=16M) 
+*
+00D4:  MOVLW  37
+00D5:  MOVWF  04
+00D6:  BCF    03.7
+00D7:  MOVF   00,W
+00D8:  BTFSC  03.2
+00D9:  GOTO   0E8
+00DA:  MOVLW  05
+00DB:  MOVWF  78
+00DC:  CLRF   77
+00DD:  DECFSZ 77,F
+00DE:  GOTO   0DD
+00DF:  DECFSZ 78,F
+00E0:  GOTO   0DC
+00E1:  MOVLW  2E
+00E2:  MOVWF  77
+00E3:  DECFSZ 77,F
+00E4:  GOTO   0E3
+00E5:  GOTO   0E6
+00E6:  DECFSZ 00,F
+00E7:  GOTO   0DA
+00E8:  BCF    0A.3
+00E9:  BCF    0A.4
+00EA:  GOTO   153 (RETURN)
+.................... #include "74HC595.c" 
+.................... // IC74HC595 dau tien la 0(Pos0), moi lan qua n IC thi se la N(PosN) 
+.................... Unsigned int8 CLk,DS,LATCH; 
+.................... Unsigned int8 IC,mang_data[]={0,0,0,0,0,0,0,0}; 
+*
+00F6:  BCF    03.5
+00F7:  CLRF   24
+00F8:  CLRF   25
+00F9:  CLRF   26
+00FA:  CLRF   27
+00FB:  CLRF   28
+00FC:  CLRF   29
+00FD:  CLRF   2A
+00FE:  CLRF   2B
+.................... void khoitao_74HC595(Unsigned int8 Clock,Unsigned int8 Data,Unsigned int8 Latch_data,Unsigned int8 Num_74HC595){ 
+....................    CLK=Clock; 
+*
+0004:  MOVF   37,W
+0005:  MOVWF  20
+....................    DS=Data; 
+0006:  MOVF   38,W
+0007:  MOVWF  21
+....................    LATCH=Latch_data; 
+0008:  MOVF   39,W
+0009:  MOVWF  22
+....................    IC=Num_74HC595; 
+000A:  MOVF   3A,W
+000B:  MOVWF  23
+....................    for(int n=0;n<IC;n++) 
+000C:  CLRF   3B
+000D:  MOVF   23,W
+000E:  SUBWF  3B,W
+000F:  BTFSC  03.0
+0010:  GOTO   018
+....................       mang_data[n]=0; 
+0011:  MOVLW  24
+0012:  ADDWF  3B,W
+0013:  MOVWF  04
+0014:  BCF    03.7
+0015:  CLRF   00
+0016:  INCF   3B,F
+0017:  GOTO   00D
+0018:  BCF    0A.3
+0019:  BCF    0A.4
+001A:  GOTO   108 (RETURN)
+.................... } 
+.................... void set_74HC595(Unsigned int8 Pos,Unsigned int8 Data_set){ 
+....................    mang_data[IC-1-Pos]=Data_set; 
+*
+0050:  MOVLW  01
+0051:  SUBWF  23,W
+0052:  MOVWF  78
+0053:  MOVF   38,W
+0054:  SUBWF  78,W
+0055:  ADDLW  24
+0056:  MOVWF  04
+0057:  BCF    03.7
+0058:  MOVF   39,W
+0059:  MOVWF  00
+....................    output_bit(LATCH,0); 
+005A:  MOVF   22,W
+005B:  MOVWF  3C
+005C:  CLRF   3D
+005D:  CLRF   3F
+005E:  CLRF   3E
+005F:  CALL   030
+0060:  MOVF   22,W
+0061:  MOVWF  3C
+0062:  CLRF   3D
+0063:  CLRF   3F
+0064:  MOVLW  80
+0065:  MOVWF  3E
+0066:  CALL   030
+....................    for(int Num_Ic=0;Num_Ic<IC;Num_Ic++){ 
+0067:  CLRF   3A
+0068:  MOVF   23,W
+0069:  SUBWF  3A,W
+006A:  BTFSC  03.0
+006B:  GOTO   0C5
+....................       for(int i=15;i+1>0;i--){ 
+006C:  MOVLW  0F
+006D:  MOVWF  3B
+006E:  MOVLW  01
+006F:  ADDWF  3B,W
+0070:  BTFSC  03.2
+0071:  GOTO   0C3
+....................          output_bit(DS,i%2==1&&bit_test(mang_data[Num_Ic],i/2)?1:0); 
+0072:  MOVF   3B,W
+0073:  ANDLW  01
+0074:  SUBLW  01
+0075:  BTFSS  03.2
+0076:  GOTO   08E
+0077:  MOVLW  24
+0078:  ADDWF  3A,W
+0079:  MOVWF  04
+007A:  BCF    03.7
+007B:  MOVF   00,W
+007C:  MOVWF  3C
+007D:  BCF    03.0
+007E:  RRF    3B,W
+007F:  MOVWF  3D
+0080:  MOVF   3C,W
+0081:  MOVWF  77
+0082:  MOVF   3D,W
+0083:  MOVWF  78
+0084:  BTFSC  03.2
+0085:  GOTO   08A
+0086:  BCF    03.0
+0087:  RRF    77,F
+0088:  DECFSZ 78,F
+0089:  GOTO   086
+008A:  BTFSS  77.0
+008B:  GOTO   08E
+008C:  MOVLW  01
+008D:  GOTO   08F
+008E:  MOVLW  00
+008F:  XORLW  00
+0090:  BTFSS  03.2
+0091:  GOTO   094
+0092:  MOVLW  00
+0093:  GOTO   095
+0094:  MOVLW  01
+0095:  MOVWF  77
+0096:  MOVF   21,W
+0097:  MOVWF  3C
+0098:  MOVF   77,W
+0099:  MOVWF  3D
+009A:  CLRF   3F
+009B:  CLRF   3E
+009C:  CALL   030
+009D:  MOVF   21,W
+009E:  MOVWF  3C
+009F:  CLRF   3D
+00A0:  CLRF   3F
+00A1:  MOVLW  80
+00A2:  MOVWF  3E
+00A3:  CALL   030
+....................          output_bit(CLK,i%2==1?1:0); 
+00A4:  MOVF   3B,W
+00A5:  ANDLW  01
+00A6:  SUBLW  01
+00A7:  BTFSS  03.2
+00A8:  GOTO   0AB
+00A9:  MOVLW  01
+00AA:  GOTO   0AC
+00AB:  MOVLW  00
+00AC:  XORLW  00
+00AD:  BTFSS  03.2
+00AE:  GOTO   0B1
+00AF:  MOVLW  00
+00B0:  GOTO   0B2
+00B1:  MOVLW  01
+00B2:  MOVWF  77
+00B3:  MOVF   20,W
+00B4:  MOVWF  3C
+00B5:  MOVF   77,W
+00B6:  MOVWF  3D
+00B7:  CLRF   3F
+00B8:  CLRF   3E
+00B9:  CALL   030
+00BA:  MOVF   20,W
+00BB:  MOVWF  3C
+00BC:  CLRF   3D
+00BD:  CLRF   3F
+00BE:  MOVLW  80
+00BF:  MOVWF  3E
+00C0:  CALL   030
+00C1:  DECF   3B,F
+00C2:  GOTO   06E
+....................       } 
+00C3:  INCF   3A,F
+00C4:  GOTO   068
+....................    } 
+....................    output_bit(LATCH,1); 
+00C5:  MOVF   22,W
+00C6:  MOVWF  3C
+00C7:  MOVLW  01
+00C8:  MOVWF  3D
+00C9:  CLRF   3F
+00CA:  CLRF   3E
+00CB:  CALL   030
+00CC:  MOVF   22,W
+00CD:  MOVWF  3C
+00CE:  CLRF   3D
+00CF:  CLRF   3F
+00D0:  MOVLW  80
+00D1:  MOVWF  3E
+00D2:  CALL   030
+00D3:  RETURN
+.................... } 
+....................  
+....................  
+.................... void main(){ 
+*
+00EB:  MOVF   03,W
+00EC:  ANDLW  1F
+00ED:  MOVWF  03
+00EE:  BSF    03.5
+00EF:  BSF    1F.0
+00F0:  BSF    1F.1
+00F1:  BSF    1F.2
+00F2:  BCF    1F.3
+00F3:  MOVLW  07
+00F4:  MOVWF  1C
+00F5:  BCF    03.7
+....................    khoitao_74HC595(PIN_D0,PIN_D1,PIN_D2,3); 
+*
+00FF:  MOVLW  40
+0100:  MOVWF  37
+0101:  MOVLW  41
+0102:  MOVWF  38
+0103:  MOVLW  42
+0104:  MOVWF  39
+0105:  MOVLW  03
+0106:  MOVWF  3A
+0107:  GOTO   004
+....................    int seg7[10]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F}; 
+0108:  MOVLW  3F
+0109:  MOVWF  2C
+010A:  MOVLW  06
+010B:  MOVWF  2D
+010C:  MOVLW  5B
+010D:  MOVWF  2E
+010E:  MOVLW  4F
+010F:  MOVWF  2F
+0110:  MOVLW  66
+0111:  MOVWF  30
+0112:  MOVLW  6D
+0113:  MOVWF  31
+0114:  MOVLW  7D
+0115:  MOVWF  32
+0116:  MOVLW  07
+0117:  MOVWF  33
+0118:  MOVLW  7F
+0119:  MOVWF  34
+011A:  MOVLW  6F
+011B:  MOVWF  35
+....................    while(1){ 
+....................       for(int k=0;k<100;k++){  
+011C:  CLRF   36
+011D:  MOVF   36,W
+011E:  SUBLW  63
+011F:  BTFSS  03.0
+0120:  GOTO   155
+....................          set_74HC595(2,seg7[k%10]); 
+0121:  MOVF   36,W
+0122:  MOVWF  37
+0123:  MOVLW  0A
+0124:  MOVWF  38
+0125:  CALL   01B
+0126:  MOVLW  2C
+0127:  ADDWF  77,W
+0128:  MOVWF  04
+0129:  BCF    03.7
+012A:  MOVF   00,W
+012B:  MOVWF  37
+012C:  MOVLW  02
+012D:  MOVWF  38
+012E:  MOVF   37,W
+012F:  MOVWF  39
+0130:  CALL   050
+....................          set_74HC595(1,seg7[k/10]); 
+0131:  MOVF   36,W
+0132:  MOVWF  37
+0133:  MOVLW  0A
+0134:  MOVWF  38
+0135:  CALL   01B
+0136:  MOVLW  2C
+0137:  ADDWF  78,W
+0138:  MOVWF  04
+0139:  BCF    03.7
+013A:  MOVF   00,W
+013B:  MOVWF  37
+013C:  MOVLW  01
+013D:  MOVWF  38
+013E:  MOVF   37,W
+013F:  MOVWF  39
+0140:  CALL   050
+....................          set_74HC595(0,seg7[k/100]); 
+0141:  MOVF   36,W
+0142:  MOVWF  37
+0143:  MOVLW  64
+0144:  MOVWF  38
+0145:  CALL   01B
+0146:  MOVLW  2C
+0147:  ADDWF  78,W
+0148:  MOVWF  04
+0149:  BCF    03.7
+014A:  MOVF   00,W
+014B:  MOVWF  37
+014C:  CLRF   38
+014D:  MOVF   37,W
+014E:  MOVWF  39
+014F:  CALL   050
+....................          delay_ms(100); 
+0150:  MOVLW  64
+0151:  MOVWF  37
+0152:  GOTO   0D4
+0153:  INCF   36,F
+0154:  GOTO   11D
+....................       } 
+0155:  GOTO   11C
+....................    } 
+.................... } 
+....................  
+0156:  SLEEP
+....................  
+....................  
+
+Configuration Fuses:
+   Word  1: 3F73   RC NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Bfor\\OneDrive\\Documents\\ArduinoData\\packages\\arduino\\hardware\\avr\\1.8.4\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Bfor\\OneDrive\\Documents\\ArduinoData\\packages\\arduino\\hardware\\avr\\1.8.4\\variants\\mega"
+  },
+  {
+    "Sourcefile": "C:\\Users\\Bfor\\OneDrive\\Desktop\\DATN\\Arduino\\Mo_phong\\sketch\\code_main.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

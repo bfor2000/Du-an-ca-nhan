@@ -1,0 +1,54 @@
+
+ROM used:   343/8192 (4%)
+            343/8192 (4%) including unused fragments
+
+            0.4 Average locations per line
+            13.7 Average locations per statement
+
+RAM used:   18/368 (5%) at main() level
+            37/368 (10%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   20    10  40  vidu_74HC595.c
+  672     0   0  D:\File app(khong duoc xoa)\PICC\Devices\16f877a.h
+  204     0   0  D:\File app(khong duoc xoa)\PICC\Drivers\def_16f877a.h
+   24    15  60  74HC595.c
+----- -----
+  920    25 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     23   7    1             @delay_ms1
+0     23   7    6    262  5.4  khoitao_74HC595
+0    132  38    4    598  9.9  set_74HC595
+0     32   9    6             @WRITEBITA
+0    108  31    1    520  5.9  MAIN
+0     21   6    3             @DIV88
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              25
+    Comments                134
+    Volume (V)              1760
+    Difficulty (D)          20.3
+    Effort to implement (E) 35801
+    Time to implement (T)   33 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   4
+    Maintainability (MI)    63
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   339  1705  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

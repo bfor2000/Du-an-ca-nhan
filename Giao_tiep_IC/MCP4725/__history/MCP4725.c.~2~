@@ -1,0 +1,3 @@
+#ifdef !i2c
+   #use i2c(master,sda=PIN_C4, scl=PIN_C3, FAST=100000)
+#endif

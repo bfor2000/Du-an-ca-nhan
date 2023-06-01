@@ -1,0 +1,22 @@
+int16 CLk,DS,LATCH;
+int8 IC,mang_data[]={};
+void khoitao_74HC595(int16 Clock,int16 Data, int16 Latch_data,int8 Num_74HC595){
+   CLK=Clock;
+   DS=Data;
+   LATCH=Latch_data;
+   IC=Num_74HC595;
+   for(int n=0;n<IC+1;n++)
+      mang_data[n]=255;
+}
+void set_74HC595(int Pos, int Data_set){
+   mang_data[IC-1-Pos]=Data_set;
+   output_bit(LATCH,0);
+   for(int Num_Ic=0;Num_Ic<IC;Num_Ic++){
+      for(int i=15;i+1>0;i--){
+         output_bit(DS,i%2==1&&bit_test(mang_data[Num_Ic],i/2)?1:0);
+         output_bit(CLK,i%2==1?1:0);
+      }
+   }
+   output_bit(LATCH,1);
+}
+

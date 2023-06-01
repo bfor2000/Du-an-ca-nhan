@@ -1,0 +1,73 @@
+[PROJECT]
+Target=vidu_MCP4725.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.025
+Compiler=PCM
+[Target Data]
+FileList=vidu_MCP4725.c
+[vidu_MCP4725.c]
+Type=4
+[mru-list]
+1=vidu_MCP4725.c
+
+[ProjectLog]
+Days=3
+D1=08-05-2023
+D1_L=2
+D1_L1=[85276]Stopped Editing.
+D1_L2=[85478]Started Editing.
+D2=09-05-2023
+D2_L=31
+D2_L1=[506]Stopped Editing.
+TotalEdit=146
+TotalDebug=0
+D2_E=69
+D2_D=0
+D2_L2=[506]Project Closed.
+D2_L3=[586]Project Opened.
+D2_L4=[636]Started Editing.
+D2_L5=[2332]Stopped Editing.
+D2_L6=[2936]Started Editing.
+D2_L7=[4102]Stopped Editing.
+D2_L8=[4102]Project Closed.
+D2_L9=[44579]Project Opened.
+D2_L10=[44889]Started Editing.
+D2_L11=[45272]Stopped Editing.
+D2_L12=[45299]Started Editing.
+D2_L13=[45680]Stopped Editing.
+D2_L14=[45840]Started Editing.
+D2_L15=[46445]Stopped Editing.
+D2_L16=[48358]Started Editing.
+D2_L17=[48788]Stopped Editing.
+D2_L18=[68602]Started Editing.
+D2_L19=[68987]Stopped Editing.
+D2_L20=[76758]Started Editing.
+D2_L21=[77587]Stopped Editing.
+D2_L22=[77626]Started Editing.
+D2_L23=[77984]Stopped Editing.
+D2_L24=[80368]Started Editing.
+D2_L25=[82348]Stopped Editing.
+D2_L26=[82462]Started Editing.
+D2_L27=[82763]Stopped Editing.
+D2_L28=[82959]Started Editing.
+D2_L29=[83259]Stopped Editing.
+D2_L30=[83592]Started Editing.
+D2_L31=[83931]Stopped Editing.
+D3=10-05-2023
+D3_E=77
+D3_D=0
+D3_L=5
+D3_L1=[2052]Project Closed.
+D3_L2=[51931]Project Opened.
+D3_L3=[52454]Started Editing.
+D3_L4=[54022]Stopped Editing.
+D3_L5=[54022]Project Closed.
+
+[Opened Files]
+1=vidu_MCP4725.c
+2=16f877a.h
+3=
+4=
+[Units]
+Count=1
+1=vidu_MCP4725 (main)

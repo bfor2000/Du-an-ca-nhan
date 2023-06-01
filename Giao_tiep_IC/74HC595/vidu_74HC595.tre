@@ -1,0 +1,21 @@
+ÀÄvidu_74HC595
+   ÀÄMAIN  0/108  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄkhoitao_74HC595  0/23  Ram=6
+      ÃÄ@DIV88  0/21  Ram=3
+      ÃÄset_74HC595  0/132  Ram=4
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÀÄ@WRITEBITA  0/32  Ram=6
+      ÃÄ@DIV88  0/21  Ram=3
+      ÃÄset_74HC595  0/132  Ram=4
+      ³  ÀÄ*
+      ÃÄ@DIV88  0/21  Ram=3
+      ÃÄset_74HC595  0/132  Ram=4
+      ³  ÀÄ*
+      ÀÄ@delay_ms1  0/23  Ram=1

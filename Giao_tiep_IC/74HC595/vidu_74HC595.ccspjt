@@ -1,0 +1,78 @@
+[PROJECT]
+Target=vidu_74HC595.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.025
+Compiler=PCM
+[Target Data]
+FileList=vidu_74HC595.c
+[vidu_74HC595.c]
+Type=4
+[mru-list]
+1=vidu_74HC595.c
+
+[Opened Files]
+1=D:\File app(khong duoc xoa)\PICC\Devices\16f877a.h
+2=
+3=
+4=
+
+[ProjectLog]
+Days=4
+D1=06-05-2023
+D1_L=29
+D1_L1=[2902]Stopped Editing.
+D1_L2=[3188]Started Editing.
+D1_L3=[6651]Stopped Editing.
+TotalEdit=337
+TotalDebug=0
+D1_E=212
+D1_D=0
+D1_L4=[6651]Project Closed.
+D1_L5=[6731]Project Opened.
+D1_L6=[6799]Started Editing.
+D1_L7=[8666]Stopped Editing.
+D1_L8=[8666]Project Closed.
+D1_L9=[72424]Project Opened.
+D1_L10=[74456]Started Editing.
+D1_L11=[74839]Stopped Editing.
+D1_L12=[75356]Started Editing.
+D1_L13=[75662]Stopped Editing.
+D1_L14=[75855]Started Editing.
+D1_L15=[76237]Stopped Editing.
+D1_L16=[76257]Started Editing.
+D1_L17=[78644]Stopped Editing.
+D1_L18=[78664]Started Editing.
+D1_L19=[79026]Stopped Editing.
+D1_L20=[79592]Started Editing.
+D1_L21=[79926]Stopped Editing.
+D1_L22=[80031]Started Editing.
+D1_L23=[82350]Stopped Editing.
+D1_L24=[82590]Started Editing.
+D1_L25=[84026]Stopped Editing.
+D1_L26=[84283]Started Editing.
+D1_L27=[84905]Stopped Editing.
+D1_L28=[85617]Started Editing.
+D1_L29=[85983]Stopped Editing.
+D2=07-05-2023
+D2_E=115
+D2_D=0
+D2_L=6
+D2_L1=[397]Project Closed.
+D2_L2=[4036]Project Opened.
+D2_L3=[4828]Started Editing.
+D2_L4=[4840]Project Closed.
+D2_L5=[6749]Project Opened.
+D2_L6=[6763]Project Closed.
+D3=08-05-2023
+D3_L=2
+D3_L1=[83513]Project Opened.
+D3_E=10
+D3_D=0
+D3_L2=[83536]Project Closed.
+D4=09-05-2023
+D4_L=2
+D4_L1=[517]Project Opened.
+D4_L2=[586]Project Closed.
+[Units]
+Count=1
+1=vidu_74HC595 (main)

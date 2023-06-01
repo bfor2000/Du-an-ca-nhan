@@ -1,0 +1,12 @@
+#ifdef !i2c
+   #use i2c(master,sda=PIN_C4, scl=PIN_C3, FAST=100000)
+#endif
+int8 Adr=0,;
+void W_mcp4725(){
+   i2c_start();
+   i2c_write(192);
+   i2c_write(96);
+   i2c_write(125);
+   i2c_write(0);
+   i2c_stop();
+}

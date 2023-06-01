@@ -1,0 +1,17 @@
+ÀÄvidu_MCP4725
+   ÀÄmain  0/33  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄW_mcp4725  0/74  Ram=0
+      ³  ÃÄ@I2C_WRITE_1  0/84  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/84  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/84  Ram=1
+      ³  ÀÄ@I2C_WRITE_1  0/84  Ram=1
+      ÃÄR_mcp4725  0/254  Ram=0
+      ³  ÃÄ@I2C_WRITE_1  0/84  Ram=1
+      ³  ÃÄ@I2C_READ_1  0/78  Ram=3
+      ³  ÃÄ@I2C_READ_1  0/78  Ram=3
+      ³  ÃÄ@PSTRINGCN7_9600_62_63  (Inline)  Ram=5
+      ³  ÀÄ@PRINTF_U_9600_62_63  (Inline)  Ram=2
+      ³     ÃÄ@DIV88  0/21  Ram=3
+      ³     ÀÄ@DIV88  0/21  Ram=3
+      ÀÄ@delay_ms1  0/23  Ram=1

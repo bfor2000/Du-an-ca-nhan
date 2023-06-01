@@ -1,0 +1,259 @@
+000     INDF
+001     TMR0
+002     PCL
+003     STATUS
+004     FSR
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+005     PORTA
+005.0   A0
+005.1   A1
+005.2   A2
+005.3   A3
+005.4   A4
+005.5   A5
+005.5   A6
+005.5   A7
+006.0   B0
+006     PORTB
+006.1   B1
+006.2   B2
+006.3   B3
+006.4   B4
+006.5   B5
+006.6   B6
+006.7   B7
+007     PORTC
+007.0   C0
+007.1   C1
+007.2   C2
+007.3   C3
+007.4   C4
+007.5   C5
+007.6   C6
+007.7   C7
+008.0   D0
+008     PSP_DATA
+008     PORTD
+008.1   D1
+008.2   D2
+008.3   D3
+008.4   D4
+008.5   D5
+008.6   D6
+008.7   D7
+009     PORTE
+009.0   E0
+009.1   E1
+009.2   E2
+00A     PCLATH
+00B     INTCON
+00B.0   rbif
+00B.1   int0if
+00B.2   tmr0if
+00B.3   rbie
+00B.4   int0ie
+00B.5   tmr0ie
+00B.6   peie
+00B.7   gie
+00C.0   tmr1if
+00C     PIR1
+00C.1   tmr2if
+00C.2   ccp1if
+00C.3   sspif
+00C.4   txif
+00C.5   rcif
+00C.6   adif
+00C.7   pspif
+00D.0   ccp2if
+00D     PIR2
+00D.3   bclif
+00D.4   eeif
+00D.6   cmif
+013     SSPBUF
+014     SSPCON
+014.0   SSPM0
+014.1   SSPM1
+014.2   SSPM2
+014.3   SSPM3
+014.4   SSPCKP
+014.5   SSPEN
+014.6   SSPOV
+014.7   SSPWCOL
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+01F     ADCON0
+01F.3   CHS0
+01F.4   CHS1
+01F.5   CHS2
+020     CLk
+021     DS
+022     LATCH
+023     IC
+024-02B mang_data
+02C-035 MAIN.seg7
+036     MAIN.k
+037     khoitao_74HC595.clock
+037     @delay_ms1.P1
+037     @DIV88.P2
+037     MAIN.@SCRATCH1
+038     @DIV88.P1
+038     khoitao_74HC595.data
+038     set_74HC595.Pos
+039     set_74HC595.Data_set
+039     khoitao_74HC595.Latch_data
+039     @DIV88.@SCRATCH1
+03A     set_74HC595.Num_Ic
+03A     khoitao_74HC595.Num_74HC595
+03B     set_74HC595.i
+03B     khoitao_74HC595.n
+03C     @WRITEBITA.P1
+03C     khoitao_74HC595.@SCRATCH1
+03C     set_74HC595.@SCRATCH1
+03D     @WRITEBITA.P1
+03D     khoitao_74HC595.@SCRATCH2
+03D     set_74HC595.@SCRATCH2
+03E-03F @WRITEBITA.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+081.0   ps0
+081     OPTION_REG
+081.1   ps1
+081.2   ps2
+081.3   psa
+081.4   t0se
+081.5   t0cs
+081.6   intedg
+081.7   not_rbpu
+085     TRISA
+085.0   trisa0
+085.1   trisa1
+085.2   trisa2
+085.3   trisa3
+085.4   trisa4
+085.5   trisa5
+086.0   trisb0
+086     TRISB
+086.1   trisb1
+086.2   trisb2
+086.3   trisb3
+086.4   trisb4
+086.5   trisb5
+086.6   trisb6
+086.7   trisb7
+087     TRISC
+087.0   trisc0
+087.1   trisc1
+087.2   trisc2
+087.3   trisc3
+087.4   trisc4
+087.5   trisc5
+087.6   trisc6
+087.7   trisc7
+088     TRISD
+088.0   trisd0
+088.1   trisd1
+088.2   trisd2
+088.3   trisd3
+088.4   trisd4
+088.5   trisd5
+088.6   trisd6
+088.7   trisd7
+089.0   trise0
+089     TRISE
+089.1   trise1
+089.2   trise2
+08C     PIE1
+08C.0   tmr1ie
+08C.1   tmr2ie
+08C.2   ccp1ie
+08C.3   sspie
+08C.4   txie
+08C.5   rcie
+08C.6   adie
+08D     PIE2
+08D.4   eeie
+08D.6   cmie
+08D.7   osfie
+091     SSPCON2
+093     SSPADD
+094     SSPSTAT
+094.0   SSPBF
+094.1   SSPUA
+094.2   SSPRW
+094.3   SSPS
+094.4   SSPP
+094.5   SSPDA
+094.6   SSPCKE
+094.7   SSPSMP
+09C.6   C1OUT
+09C.7   C2OUT
+09F     ADSESL
+09F     ADRESH
+09F     ADCON1
+10C     EEDATA
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+10D     EEADR
+10E     EEDATH
+10F     EEADRH
+18C     EECON1
+18C.0   rd
+18C.1   wr
+18C.2   wren
+18C.3   wrerr
+18C.4   free
+18C.7   eepgd
+18D     EECON2
+
+ROM Allocation:
+000004  khoitao_74HC595
+00001B  @DIV88
+000030  @WRITEBITA
+000050  set_74HC595
+0000D4  @delay_ms1
+0000EB  MAIN
+0000EB  @cinit1
+0000F5  @cinit2
+
+Project Directory:
+    C:\Users\Bfor\OneDrive\Desktop\thu_vien_c\74HC595\
+
+Project Files:
+    vidu_74HC595.c                                          [07-May-23 01:20  CRC=C9675511]
+    D:\File app(khong duoc xoa)\PICC\Devices\16f877a.h      [18-Apr-14 16:56  CRC=4F277C97]
+    D:\File app(khong duoc xoa)\PICC\Drivers\def_16f877a.h  [10-Nov-21 07:51  CRC=6FDA1593]
+    74HC595.c                                               [06-May-23 23:47  CRC=E376182A]
+
+Source signature=4F55178F
+
+Units:
+    vidu_74HC595 (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   vidu_74HC595.xsym
+    Errors:      vidu_74HC595.err
+    Ext Symbols: vidu_74HC595.esym
+    INHX8:       vidu_74HC595.hex
+    Symbols:     vidu_74HC595.sym
+    List:        vidu_74HC595.lst
+    Debug/COFF:  vidu_74HC595.cof
+    Project:     vidu_74HC595.ccspjt
+    Call Tree:   vidu_74HC595.tre
+    Statistics:  vidu_74HC595.STA

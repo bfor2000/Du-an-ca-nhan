@@ -1,0 +1,22 @@
+#include <16f877a.h>
+#include <def_16f877a.h>
+#use delay(clock=16M)
+#include "74HC595.c"
+void test(int c);
+void main(){
+   khoitao_74HC595(PIN_D0,PIN_D1,PIN_D2,3);
+   int seg7[10]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+   delay_ms(3000);
+   set_74HC595(0,seg7[1]);
+   //while(1){
+      //for(int k=0;k<100;k++){ 
+         //set_74HC595(0,seg7[k%10]);
+         //set_74HC595(1,seg7[1]);
+         //set_74HC595(2,seg7[1]);
+         //delay_ms(1000);
+      //}
+   //}
+}
+
+
+

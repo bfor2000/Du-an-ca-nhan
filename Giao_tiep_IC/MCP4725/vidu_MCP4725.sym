@@ -1,0 +1,84 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     R_mcp4725.data1
+021     main.@SCRATCH1
+022     R_mcp4725.i
+022     @delay_ms1.P1
+023     @PRINTF_U_9600_62_63.P1
+023     @I2C_READ_1.P2
+023     @I2C_WRITE_1.P3
+023     @PSTRINGCN7_9600_62_63.P4
+024     @PRINTF_U_9600_62_63.P1
+024     @I2C_READ_1.@SCRATCH1
+024     @PSTRINGCN7_9600_62_63.@SCRATCH1
+025     @DIV88.P1
+025     @I2C_READ_1.@SCRATCH2
+025     @PSTRINGCN7_9600_62_63.@SCRATCH2
+026     @DIV88.P1
+026     @PSTRINGCN7_9600_62_63.@SCRATCH3
+027     @PSTRINGCN7_9600_62_63.@SCRATCH4
+027     @DIV88.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const636.call
+00000A  @I2C_WRITE_1
+00005E  W_mcp4725
+0000A8  @I2C_READ_1
+0000F6  @DIV88
+00010B  R_mcp4725
+00014A  @PSTRINGCN7_9600_62_63
+0001A6  @PRINTF_U_9600_62_63
+000209  @delay_ms1
+000220  main
+000220  @cinit1
+000234  @cinit2
+
+Project Directory:
+    C:\Users\Bfor\OneDrive\Desktop\thu_vien_c\MCP4725\
+
+Project Files:
+    vidu_MCP4725.c                                          [10-May-23 14:59  CRC=6C7680C4]
+    16f877a.h                                               [18-Apr-14 16:56  CRC=4F277C97]
+
+Source signature=0AC579F2
+
+Units:
+    vidu_MCP4725 (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   vidu_MCP4725.xsym
+    Errors:      vidu_MCP4725.err
+    Ext Symbols: vidu_MCP4725.esym
+    INHX8:       vidu_MCP4725.hex
+    Symbols:     vidu_MCP4725.sym
+    List:        vidu_MCP4725.lst
+    Debug/COFF:  vidu_MCP4725.cof
+    Project:     vidu_MCP4725.ccspjt
+    Call Tree:   vidu_MCP4725.tre
+    Statistics:  vidu_MCP4725.STA

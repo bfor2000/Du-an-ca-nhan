@@ -1,0 +1,23 @@
+#include "16f877a.h"
+#use delay(clock=16M)
+#use i2c(master,sda=PIN_C4, scl=PIN_C3, FAST=100000)  
+
+void W_mcp4725();
+void main(){
+   W_mcp4725();
+   while(1){
+      
+      i2c_start();
+      i2c_write(193);
+      
+      delay_ms(1000);
+   }
+}
+void W_mcp4725(){
+   i2c_start();
+   i2c_write(192);
+   i2c_write(96);
+   i2c_write(125);
+   i2c_write(15);
+   i2c_stop();
+}
